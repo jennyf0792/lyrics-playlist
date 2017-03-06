@@ -1,7 +1,7 @@
 require 'lyricfy'
 require 'rspotify'
 
-RSpotify.authenticate("5fe531ca56b14dc9866c7edba8d98576", "af8b8321f3c64818833b81bcf4d1bd36")
+RSpotify.authenticate(ENV["SPOTIFY_ID"], ENV["SPOTIFY_SECRET"])
 
 class Song
     attr_reader :name, :artist, :album_img, :lyrics
