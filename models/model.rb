@@ -37,18 +37,18 @@ class Playlist
         playlist = RSpotify::Playlist.find(@user,@playlist_id)
         
         # get playlist name
-            @name = playlist_name
+            @name = playlist.name
         # fill the @songs array with new instances of the Song class
         playlist.tracks.each do |track|
-           @songs << Song.new(track.name ,track.artists.first.name, track.album.images.first["url"]) 
+           @songs << Song.new(track.name, track.artists.first.name, track.album.images.first["url"]) 
         end
     end
     
-#     def get_lyrics
-#         @songs.each do |song|
-#             song.get_lyrics
-#         end
-#     end
+    def get_lyrics
+        @songs.each do |song|
+            song.get_lyrics
+        end
+    end
     
 end
 
