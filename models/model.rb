@@ -40,7 +40,7 @@ class Playlist
             @name = playlist_name
         # fill the @songs array with new instances of the Song class
         playlist.tracks.each do |track|
-           @songs << Song.new(track.name ,track.artist.first.name, track.album.images.first["url"]) 
+           @songs << Song.new(track.name ,track.artists.first.name, track.album.images.first["url"]) 
         end
     end
     
